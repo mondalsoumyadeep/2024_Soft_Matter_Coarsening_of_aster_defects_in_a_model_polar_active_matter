@@ -6,3 +6,4 @@ The main_code.py file is used to solve the non-linear coupled PDE and store the 
 The main_analyze.py file generates the plots.
 The Plots folder contains a Jupyter notebook used to plot the data presented in the paper.
 The defect_dynamics.py file is used to characterize topological defects with different charges and configurations, specifically +/-1.
+In the pdf, We examine the effect of the different parameters on the system.
