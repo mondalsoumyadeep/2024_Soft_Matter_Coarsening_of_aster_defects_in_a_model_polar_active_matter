@@ -10,4 +10,6 @@ The Plots folder contains a Jupyter notebook used to plot the data presented in 
 
 The defect_dynamics.py file is used to characterize topological defects with different charges and configurations, specifically +/-1.
 
+The folder Radial_distribution_function contains the data, code and plot for the RDF of the arrested state configuration of the defects.
+
 In the pdf, We examine the effect of the different parameters on the system.
