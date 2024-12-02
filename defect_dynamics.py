@@ -29,13 +29,17 @@ def find_defects(phi, phi0=1.6 * np.pi, mx=0, my=0):
             
             # Calculate the phase difference for the edges of the cell
             dphi = area(t2, t1) + area(t3, t2) + area(t4, t3) + area(t1, t4)
-            
+            flux1 = -nx[i, j] - ny[i, j]
+            flux2 = nx[inext, j] - ny[inext, j]
+            flux3 = nx[inext, jnext] + ny[inext, jnext]
+            flux4 = -nx[i, jnext] + ny[i, jnext]
+            total_flux = flux1 + flux2 + flux3 + flux4
             # If the absolute phase difference is greater than the threshold, it's a defect
             if np.abs(dphi) > phi0:
                 qx.append((i + 1) % sx)
                 qy.append((j + 1) % sy)
                 qi.append(int(np.round(dphi / (2 * np.pi))))  # Winding number
-                q_direction.append(np.sign(dphi))  # Record defect direction
+                q_direction.append(np.sign(total_flux))  # Record defect direction
                 
     return np.array(qx), np.array(qy), np.array(qi), np.array(q_direction)
 
